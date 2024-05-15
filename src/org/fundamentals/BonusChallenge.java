@@ -7,6 +7,7 @@ public class BonusChallenge {
         // Open Scanner
         Scanner scanner = new Scanner(System.in);
 
+        // User input
         String userString;
         System.out.print("Enter a string: ");
         userString = scanner.nextLine();
@@ -15,29 +16,29 @@ public class BonusChallenge {
         System.out.print("Enter a character: ");
         userCharacter = scanner.nextLine().charAt(0);
 
-        char charToExamine;
+        // Define support variables
         int longestStringLength = 0;
-        int startIndex = 0;
+        int currentStringLength = 0;
+        int startIndex = -1;
+        int tempIndex = -1;
 
+        // Loop through array
         for (int i = 0; i < userString.length(); i++) {
-            charToExamine = userString.charAt(i);
-            int currentStringLength = 0;
-            if (charToExamine == userCharacter){
-                for (int j = i; j < userString.length(); j++) {
-                    if (userString.charAt(j) == userCharacter){
-                        currentStringLength++;
-                    } else {
-                        break;
-                    }
+            if (userString.charAt(i) == userCharacter) {
+                if (currentStringLength == 0) {
+                    tempIndex = i;
                 }
-                if (currentStringLength > longestStringLength){
+                currentStringLength++;
+                if (currentStringLength >= longestStringLength) {
                     longestStringLength = currentStringLength;
-                    startIndex = i;
+                    startIndex = tempIndex;
                 }
+            } else {
+                currentStringLength = 0;
             }
-
         }
 
+        // Print results
         System.out.println("Your string: " + userString);
         System.out.println("Your character: " + userCharacter);
         System.out.println("Longest consecutive string of your character: " + longestStringLength);
