@@ -11,7 +11,7 @@ public class TrainTickets {
         System.out.print("Travel distance (kms): ");
         travelDistance = Integer.parseInt(scanner.nextLine());
 
-        System.out.print("Passenger Age: ");
+        System.out.print("Passenger age: ");
         passengerAge = Integer.parseInt(scanner.nextLine());
 
         double pricePerKm = 0.21;
