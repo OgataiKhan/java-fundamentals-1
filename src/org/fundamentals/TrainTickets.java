@@ -28,7 +28,7 @@ public class TrainTickets {
         }
 
         // Print ticket price
-        System.out.println(finalPrice);
+        System.out.println("Ticket price: " + finalPrice + "€");
 
         // Close Scanner
         scanner.close();
